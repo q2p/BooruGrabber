@@ -1,0 +1,26 @@
+prioritets:
+posts artists<----
++ (last/id)              posts -> tags, notes(reversed), comments(reversed)
++ (last/id)              pools -> posts
++ (nolast/list+reversed) artists (single request)
++ (nolast/list+reversed) wiki (single request)
++ (last/list+reversed)   user(id,level,name,creation_date,avatar_id)
++ (last/list+reversed)   aliases
++ (last/list+reversed)   implications
+
+time management:
+indexing
+	posts(up to 4096) 1000k
+	pools(up to  256)   10k
+	user (up to  512)  300k
+	alias(up to  256)   12k
+	impl (up to  256)   10k
+updating
+	posts(up to 1024) 1000k
+	pools(up to   64)   10k
+	user (up to  256)  300k
+	alias(up to   64)   12k
+	impl (up to   64)   10k
+
+// TODO: Проверить на последовательность сохранения частей в некоторых запросах, где порядок имеет значение
+// TODO: Рефакторинг
